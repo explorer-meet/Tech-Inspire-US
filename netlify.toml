@@ -1,20 +1,11 @@
 [build]
   command = "npm run build"
-  publish = ".next"
+
+# The @netlify/plugin-nextjs (v5+) handles publishing and routing for
+# Next.js App Router builds. Do NOT set `publish` — the plugin manages it.
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
-
-# Long-lived cache for static assets (Next handles its own hashed filenames)
-[[headers]]
-  for = "/_next/static/*"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
-
-[[headers]]
-  for = "/logo.png"
-  [headers.values]
-    Cache-Control = "public, max-age=86400"
 
 # Sensible security headers
 [[headers]]
