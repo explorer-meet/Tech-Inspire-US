@@ -2,7 +2,6 @@
 
 A production-ready marketing website for **TEKinspire** built with **Next.js 14 (App Router)**, **TypeScript**, **TailwindCSS** and **Framer Motion**.
 
-Design inspired by the clean enterprise patterns of `tabdelta.com` and `vasconsultancy.in`, with a custom orange/white brand theme that matches the TEKinspire logo.
 
 ## ✨ Features
 
