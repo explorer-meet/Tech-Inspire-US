@@ -1,5 +1,4 @@
 import PageHeader from '@/components/PageHeader';
-import StatsBlock from '@/components/StatsBlock';
 import ProcessSection from '@/components/ProcessSection';
 import Reveal from '@/components/Reveal';
 import CTASection from '@/components/CTASection';
@@ -117,8 +116,6 @@ export default function AboutPage() {
           </Reveal>
         </div>
       </section>
-
-      <StatsBlock />
 
       {/* Values */}
       <section className="section bg-gradient-to-b from-brand-50/60 to-white">

@@ -1,11 +1,9 @@
 import Hero from '@/components/Hero';
-import StatsBlock from '@/components/StatsBlock';
 import ServicesGrid from '@/components/ServicesGrid';
 import ProcessSection from '@/components/ProcessSection';
 import IndustriesSection from '@/components/IndustriesSection';
 import Testimonials from '@/components/Testimonials';
 import CTASection from '@/components/CTASection';
-import MarqueeLogos from '@/components/MarqueeLogos';
 import Reveal from '@/components/Reveal';
 import AboutTeaser from '@/components/AboutTeaser';
 import FeaturedServices from '@/components/FeaturedServices';
@@ -17,16 +15,6 @@ export default function HomePage() {
     <>
       <Hero />
 
-      <section className="border-y border-ink-100 bg-white">
-        <div className="container-x py-6">
-          <div className="mb-2 text-center text-xs uppercase tracking-[0.22em] text-ink-500">
-            Trusted by ambitious teams across North America
-          </div>
-          <MarqueeLogos />
-        </div>
-      </section>
-
-      <StatsBlock />
       <AboutTeaser />
 
       <section className="section bg-gradient-to-b from-white to-brand-50/40">

@@ -15,7 +15,7 @@ type Props = {
 
 export default function PageHeader({ eyebrow, title, subtitle, crumbs }: Props) {
   return (
-    <section className="relative overflow-hidden pt-36 pb-20 md:pt-44 md:pb-28">
+    <section className="relative overflow-hidden pt-32 pb-14 md:pt-36 md:pb-20">
       <div className="absolute inset-0 -z-10 bg-radial-fade" />
       <div className="absolute -top-24 right-0 -z-10 h-72 w-72 rounded-full bg-brand-300/30 blur-3xl animate-blob" />
       <div className="absolute -bottom-24 left-10 -z-10 h-80 w-80 rounded-full bg-brand-200/40 blur-3xl animate-blob" style={{ animationDelay: '3s' }} />

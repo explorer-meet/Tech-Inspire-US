@@ -5,14 +5,14 @@ import Image from 'next/image';
 import Reveal from './Reveal';
 import { INDUSTRIES } from '@/lib/data';
 
-const industryImages = [
-  '/images/case-healthcare.jpg',
-  '/images/case-fintech.jpg',
-  '/images/case-insurance.jpg',
-  '/images/case-retail.jpg',
-  '/images/service-software.jpg',
-  '/images/service-strategy.jpg',
-];
+const industryVisuals: Record<string, { src: string; objectPosition?: string }> = {
+  'Healthcare & Life Sciences': { src: '/images/case-healthcare.jpg', objectPosition: 'center' },
+  'Banking & Fintech': { src: '/images/case-fintech.jpg', objectPosition: 'center' },
+  Insurance: { src: '/images/case-insurance.jpg', objectPosition: 'center' },
+  'Retail & E-commerce': { src: '/images/case-retail.jpg', objectPosition: 'center' },
+  Manufacturing: { src: '/images/service-software.jpg', objectPosition: 'center' },
+  'Public Sector': { src: '/images/service-strategy.jpg', objectPosition: 'center' },
+};
 
 export default function IndustriesSection() {
   return (
@@ -40,6 +40,10 @@ export default function IndustriesSection() {
         <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {INDUSTRIES.map((ind, i) => {
             const Icon = ind.icon;
+            const visual = industryVisuals[ind.name] ?? {
+              src: '/images/service-strategy.jpg',
+              objectPosition: 'center',
+            };
             return (
               <motion.div
                 key={ind.name}
@@ -51,13 +55,14 @@ export default function IndustriesSection() {
               >
                 <div className="relative aspect-[16/10] overflow-hidden">
                   <Image
-                    src={industryImages[i % industryImages.length]}
+                    src={visual.src}
                     alt={ind.name}
                     fill
                     sizes="(max-width: 768px) 100vw, 33vw"
-                    className="object-cover opacity-60 transition-all duration-[1.2s] group-hover:scale-110 group-hover:opacity-80"
+                    style={{ objectPosition: visual.objectPosition }}
+                    className="object-cover opacity-85 brightness-110 saturate-110 transition-all duration-[1.2s] group-hover:scale-105 group-hover:opacity-95"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-ink-950 via-ink-950/60 to-ink-950/20" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-ink-950/72 via-ink-950/30 to-ink-950/5" />
                   <div className="absolute left-5 top-5 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-white/10 text-brand-400 backdrop-blur transition-all duration-500 group-hover:bg-brand-gradient group-hover:text-white">
                     <Icon className="h-6 w-6" />
                   </div>

@@ -7,24 +7,25 @@ export default function Footer() {
   return (
     <footer className="relative mt-20 overflow-hidden bg-ink-950 text-ink-200">
       <div className="absolute inset-0 bg-radial-fade opacity-60" />
-      <div className="absolute -top-24 -right-24 h-72 w-72 rounded-full bg-brand-500/20 blur-3xl" />
+      <div className="absolute -right-24 -top-24 h-72 w-72 rounded-full bg-brand-500/20 blur-3xl" />
       <div className="absolute -bottom-24 -left-24 h-72 w-72 rounded-full bg-brand-700/20 blur-3xl" />
 
-      <div className="container-x relative pt-20 pb-10">
+      <div className="container-x relative pb-10 pt-20">
         <div className="grid gap-12 lg:grid-cols-12">
           <div className="lg:col-span-4">
-            <Link href="/" className="inline-flex items-center rounded-2xl bg-white px-5 py-3 shadow-soft transition-transform duration-300 hover:-translate-y-0.5">
+            <Link
+              href="/"
+              className="inline-flex items-center rounded-2xl bg-white px-5 py-3 shadow-soft transition-transform duration-300 hover:-translate-y-0.5"
+            >
               <Image
                 src="/logo.png"
-                alt="TEKinspire — Inspired by Technology"
+                alt="TEKinspire - Inspired by Technology"
                 width={520}
                 height={160}
                 className="h-12 w-auto"
               />
             </Link>
-            <p className="mt-6 max-w-md text-sm leading-relaxed text-ink-200/80">
-              {SITE.description}
-            </p>
+            <p className="mt-6 max-w-md text-sm leading-relaxed text-ink-200/80">{SITE.description}</p>
 
             <div className="mt-8 space-y-4 text-sm">
               <div className="flex items-start gap-3">
@@ -51,9 +52,7 @@ export default function Footer() {
           </div>
 
           <div className="lg:col-span-2">
-            <div className="font-display text-sm font-semibold uppercase tracking-[0.18em] text-white">
-              Company
-            </div>
+            <div className="font-display text-sm font-semibold uppercase tracking-[0.18em] text-white">Company</div>
             <ul className="mt-5 space-y-3 text-sm">
               {NAV_LINKS.map((l) => (
                 <li key={l.href}>
@@ -66,9 +65,7 @@ export default function Footer() {
           </div>
 
           <div className="lg:col-span-3">
-            <div className="font-display text-sm font-semibold uppercase tracking-[0.18em] text-white">
-              Services
-            </div>
+            <div className="font-display text-sm font-semibold uppercase tracking-[0.18em] text-white">Services</div>
             <ul className="mt-5 space-y-3 text-sm">
               {SERVICES.slice(0, 8).map((s) => (
                 <li key={s.slug}>
@@ -81,29 +78,48 @@ export default function Footer() {
           </div>
 
           <div className="lg:col-span-3">
-            <div className="font-display text-sm font-semibold uppercase tracking-[0.18em] text-white">
-              Let&apos;s build something
-            </div>
-            <p className="mt-5 text-sm text-ink-200/80">
-              Have a project, role to hire for, or transformation goal in mind?
-            </p>
-            <Link href="/contact" className="mt-6 inline-flex items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-semibold text-ink-900 transition-transform duration-300 hover:-translate-y-0.5">
+            <div className="font-display text-sm font-semibold uppercase tracking-[0.18em] text-white">Let's build something</div>
+            <p className="mt-5 text-sm text-ink-200/80">Have a project, role to hire for, or transformation goal in mind?</p>
+            <Link
+              href="/contact"
+              className="mt-6 inline-flex items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-semibold text-ink-900 transition-transform duration-300 hover:-translate-y-0.5"
+            >
               Start a conversation
               <ArrowUpRight className="h-4 w-4" />
             </Link>
 
             <div className="mt-8 flex items-center gap-3">
               {[
-                { Icon: Linkedin, href: SITE.social.linkedin, label: 'LinkedIn' },
-                { Icon: Twitter, href: SITE.social.twitter, label: 'Twitter' },
-                { Icon: Facebook, href: SITE.social.facebook, label: 'Facebook' },
-                { Icon: Instagram, href: SITE.social.instagram, label: 'Instagram' },
-              ].map(({ Icon, href, label }) => (
+                {
+                  Icon: Linkedin,
+                  href: SITE.social.linkedin,
+                  label: 'LinkedIn',
+                  style: 'text-[#0A66C2] bg-[#0A66C2]/15 border-[#0A66C2]/35 hover:bg-[#0A66C2] hover:text-white',
+                },
+                {
+                  Icon: Twitter,
+                  href: SITE.social.twitter,
+                  label: 'Twitter',
+                  style: 'text-[#1D9BF0] bg-[#1D9BF0]/15 border-[#1D9BF0]/35 hover:bg-[#1D9BF0] hover:text-white',
+                },
+                {
+                  Icon: Facebook,
+                  href: SITE.social.facebook,
+                  label: 'Facebook',
+                  style: 'text-[#1877F2] bg-[#1877F2]/15 border-[#1877F2]/35 hover:bg-[#1877F2] hover:text-white',
+                },
+                {
+                  Icon: Instagram,
+                  href: SITE.social.instagram,
+                  label: 'Instagram',
+                  style: 'text-[#E1306C] bg-[#E1306C]/15 border-[#E1306C]/35 hover:bg-[#E1306C] hover:text-white',
+                },
+              ].map(({ Icon, href, label, style }) => (
                 <a
                   key={label}
                   href={href}
                   aria-label={label}
-                  className="grid h-10 w-10 place-items-center rounded-xl border border-white/15 bg-white/5 text-ink-200 transition-all hover:-translate-y-0.5 hover:border-brand-400 hover:bg-brand-500 hover:text-white"
+                  className={`grid h-10 w-10 place-items-center rounded-xl border transition-all hover:-translate-y-0.5 ${style}`}
                 >
                   <Icon className="h-4 w-4" />
                 </a>

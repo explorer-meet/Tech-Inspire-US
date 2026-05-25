@@ -3,13 +3,13 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { ArrowRight, CheckCircle2 } from 'lucide-react';
+import { ArrowRight, Handshake, ShieldCheck, Target, Users } from 'lucide-react';
 
 const highlights = [
-  'Senior W2 consultants, not just resumes',
-  'Onshore, nearshore and offshore models',
-  'Pods that ship in weeks, not quarters',
-  '12+ years partnering with Fortune 500 to startups',
+  { title: 'Teamwork', Icon: Users },
+  { title: 'Respect', Icon: Handshake },
+  { title: 'Trust', Icon: ShieldCheck },
+  { title: 'Mission', Icon: Target },
 ];
 
 export default function AboutTeaser() {
@@ -81,23 +81,23 @@ export default function AboutTeaser() {
             transition={{ duration: 0.7, delay: 0.2 }}
             className="mt-6 text-ink-700"
           >
-            From our headquarters in Edison, NJ we partner with enterprises, mid-market leaders and ambitious startups
-            to deliver outcomes that move the business forward — combining senior consulting talent, a deep bench of
-            engineers and a proven delivery model.
+            TEKinspire is a tier 1, Technology Staffing, Consulting and Solutions firm offering on-demand access to
+            exceptional talent. We supply consultants to many of the world&apos;s largest IT organizations for projects
+            ranging from ERP and CRM to e-commerce, security and other network and enterprise application initiatives.
           </motion.p>
 
           <ul className="mt-7 grid gap-3 sm:grid-cols-2">
             {highlights.map((h, i) => (
               <motion.li
-                key={h}
+                key={h.title}
                 initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.3 + i * 0.07 }}
                 className="flex items-start gap-3 rounded-2xl border border-ink-100 bg-white p-4 text-sm font-medium text-ink-800"
               >
-                <CheckCircle2 className="mt-0.5 h-5 w-5 flex-shrink-0 text-brand-500" />
-                {h}
+                <h.Icon className="mt-0.5 h-5 w-5 flex-shrink-0 text-brand-500" />
+                {h.title}
               </motion.li>
             ))}
           </ul>
